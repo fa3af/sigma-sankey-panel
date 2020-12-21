@@ -1,4 +1,4 @@
-# Sankey Panel Plugin 
+# Sigma Sankey Panel Plugin 
 
 Sankey Panel plugin grafana untuk PT. Sigma Cipta Caraka
 
