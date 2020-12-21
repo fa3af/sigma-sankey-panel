@@ -1,9 +1,9 @@
 {
   "type": "panel",
-  "name": "my-plugin",
+  "name": "Sigma Sankey Panel",
   "id": "1-my-plugin",
   "info": {
-    "description": "testing plugin",
+    "description": "Sankey Panel Plugin untuk PT. Sigma Cipta Caraka",
     "author": {
       "name": "M. Faishol T. Afandi",
       "url": ""
