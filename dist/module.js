@@ -2427,15 +2427,15 @@ var SimplePanel = function SimplePanel(_a) {
   var color;
 
   switch (options.color) {
-    case 'red':
+    case "red":
       color = theme.palette.redBase;
       break;
 
-    case 'green':
+    case "green":
       color = theme.palette.greenBase;
       break;
 
-    case 'blue':
+    case "blue":
       color = theme.palette.blue95;
       break;
   }
@@ -2452,15 +2452,15 @@ var SimplePanel = function SimplePanel(_a) {
   var countFlag = false;
   var extraSeries = [];
   data.series[0].fields.forEach(function (element, index) {
-    if (element.name === 'source.ip') {
+    if (element.name === "source.ip") {
       primariHeader[0] = element.name;
       sourceIp = element.values;
       sourceIpFlag = true;
-    } else if (element.name === 'destination.ip') {
+    } else if (element.name === "destination.ip") {
       primariHeader[1] = element.name;
       destinationIp = element.values;
       destinationIpFlag = true;
-    } else if (element.name === 'Count') {
+    } else if (element.name === "Count") {
       primariHeader[2] = element.name;
       count = element.values;
       countFlag = true;
@@ -2471,8 +2471,8 @@ var SimplePanel = function SimplePanel(_a) {
 
   if (sourceIpFlag && destinationIpFlag && countFlag) {
     primariHeader[3] = {
-      type: 'string',
-      role: 'tooltip'
+      type: "string",
+      role: "tooltip"
     };
     graphData.push(primariHeader);
 
@@ -2482,14 +2482,14 @@ var SimplePanel = function SimplePanel(_a) {
       var cn = count.get(index);
       var defdata = [si, di, cn];
       var tooltipText = '<div style="color:#000000; padding: 20px 15px; width:100%"><table style="border:none">';
-      tooltipText += '<tr><td style="white-space: nowrap;">From</td><td style="white-space: nowrap;"> : <b>' + si + '</b></td></tr>';
-      tooltipText += '<tr><td style="white-space: nowrap;">To</td><td  style="white-space: nowrap;"> : <b>' + di + '</b></td></tr>';
-      tooltipText += '<tr><td style="white-space: nowrap;">Count</td><td  style="white-space: nowrap;"> : <b>' + cn + '</b></td></tr>';
+      tooltipText += '<tr><td style="white-space: nowrap;">From</td><td style="white-space: nowrap;"> : <b>' + si + "</b></td></tr>";
+      tooltipText += '<tr><td style="white-space: nowrap;">To</td><td  style="white-space: nowrap;"> : <b>' + di + "</b></td></tr>";
+      tooltipText += '<tr><td style="white-space: nowrap;">Count</td><td  style="white-space: nowrap;"> : <b>' + cn + "</b></td></tr>";
       extraSeries.forEach(function (element) {
         //console.log(element);
-        tooltipText += '<tr><td style="white-space: nowrap;">' + element.name + '</td><td style="white-space: nowrap;"> : <b>' + element.values.get(index) + '</b></td></tr>';
+        tooltipText += '<tr><td style="white-space: nowrap;">' + element.name + '</td><td style="white-space: nowrap;"> : <b>' + element.values.get(index) + "</b></td></tr>";
       });
-      tooltipText += '</table></div>';
+      tooltipText += "</table></div>";
       graphData.push(Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__spread"])(defdata, [tooltipText]));
     };
 
@@ -2498,7 +2498,7 @@ var SimplePanel = function SimplePanel(_a) {
     }
   }
 
-  console.log('data dari mana tak tahu', graphData); // const radii = data.series
+  console.log("data dari mana tak tahu", graphData); // const radii = data.series
   //   .map(series => series.fields.find(field => field.type === 'number'))
   //   .map(field => field?.values.get(field.values.length - 1));
 
@@ -2514,7 +2514,7 @@ var SimplePanel = function SimplePanel(_a) {
       }
     },
     rootProps: {
-      'data-testid': '2'
+      "data-testid": "2"
     }
   }), !sourceIpFlag && react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     className: styles.textBox
@@ -2552,28 +2552,28 @@ __webpack_require__.r(__webpack_exports__);
 
 var plugin = new _grafana_data__WEBPACK_IMPORTED_MODULE_0__["PanelPlugin"](_SimplePanel__WEBPACK_IMPORTED_MODULE_1__["SimplePanel"]).setPanelOptions(function (builder) {
   return builder.addTextInput({
-    path: 'text',
-    name: 'Simple text option',
-    description: 'Description of panel option',
-    defaultValue: 'Default value of text input option'
+    path: "text",
+    name: "Simple text option",
+    description: "Description of panel option",
+    defaultValue: "Default value of text input option"
   }).addBooleanSwitch({
-    path: 'showSeriesCount',
-    name: 'Show series counter',
+    path: "showSeriesCount",
+    name: "Show series counter",
     defaultValue: false
   }).addRadio({
-    path: 'seriesCountSize',
-    defaultValue: 'sm',
-    name: 'Series counter size',
+    path: "seriesCountSize",
+    defaultValue: "sm",
+    name: "Series counter size",
     settings: {
       options: [{
-        value: 'sm',
-        label: 'Small'
+        value: "sm",
+        label: "Small"
       }, {
-        value: 'md',
-        label: 'Medium'
+        value: "md",
+        label: "Medium"
       }, {
-        value: 'lg',
-        label: 'Large'
+        value: "lg",
+        label: "Large"
       }]
     },
     showIf: function showIf(config) {
